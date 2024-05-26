@@ -5,8 +5,12 @@ authors = ["Michael Freeborn <michaelfreeborn1@gmail.com>"]
 edition = "2021"
 
 [dependencies]
-plotly = { version="0.8.4", features = ["wasm"] }
-yew = { version="0.21.0", features = ["csr"] }
+plotly = { version = "0.8.4", features = [
+    "wasm",
+    "plotly_ndarray",
+    "plotly_image",
+] }
+yew = { version = "0.21.0", features = ["csr"] }
 yew-hooks = "0.3.2"
 log = "0.4"
 wasm-logger = "0.2"
@@ -17,4 +21,6 @@ rand_distr = "0.4.3"
 itertools = "0.13.0"
 csv = "1.1.6"
 #//TODO: to 0.25, used by plotly
+
 image = "0.24.9"
+serde = "1.0"
