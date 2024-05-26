@@ -6,7 +6,7 @@ edition = "2021"
 
 [dependencies]
 plotly = { version="0.8.4", features = ["wasm"] }
-yew = "0.19"
-yew-hooks = "0.1.56"
+yew = "0.20.0"
+yew-hooks = "0.3.0"
 log = "0.4"
 wasm-logger = "0.2"
