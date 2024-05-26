@@ -11,3 +11,10 @@ yew-hooks = "0.3.2"
 log = "0.4"
 wasm-logger = "0.2"
 
+ndarray = "0.15.6"
+rand = "0.8.5"
+rand_distr = "0.4.3"
+itertools = "0.13.0"
+csv = "1.1.6"
+#//TODO: to 0.25, used by plotly
+image = "0.24.9"
