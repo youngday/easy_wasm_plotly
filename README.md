@@ -2,11 +2,12 @@
 
 ## lib
 
-plotly
+get plotly.rs lib from
+https://github.com/plotly/plotly.rs
 
 ## example 
 Wasm Yew Minimal
-
+![newplot.png](newplot.png)
 ## Prerequisites
 
 1. Install [Trunk](https://trunkrs.dev/) using `cargo install --locked trunk`.
@@ -18,11 +19,11 @@ Wasm Yew Minimal
 ```sh
 trunk serve --open
 ```
-## more
+## goal
 
 we can check "plotly", "yew", "wasm","trunk" and more libs,
 so we can run wasm on web ,ploting what you want
 
 ## TODO
 
-plot "plotly" examples all by wasm on web
+file upload

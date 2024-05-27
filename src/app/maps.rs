@@ -6,7 +6,7 @@ use plotly::{
     Layout, Plot, ScatterMapbox,
 };
 
-fn scatter_mapbox(_plot: &mut Plot) {
+pub fn scatter_mapbox(_plot: &mut Plot) {
     let trace = ScatterMapbox::new(vec![45.5017], vec![-73.5673])
         .marker(Marker::new().size(25).opacity(0.9));
 

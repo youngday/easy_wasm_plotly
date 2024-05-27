@@ -7,7 +7,7 @@ use plotly::contour::Contours;
 use plotly::{Contour, HeatMap, Layout, Plot};
 
 // Contour Plots
-fn simple_contour_plot(_plot: &mut Plot) {
+pub fn simple_contour_plot(_plot: &mut Plot) {
     let n = 200;
     let mut x = Vec::<f64>::new();
     let mut y = Vec::<f64>::new();
@@ -33,7 +33,7 @@ fn simple_contour_plot(_plot: &mut Plot) {
     _plot.add_trace(trace);
 }
 
-fn colorscale_for_contour_plot(_plot: &mut Plot) {
+pub fn colorscale_for_contour_plot(_plot: &mut Plot) {
     let z = vec![
         vec![10.0, 10.625, 12.5, 15.625, 20.0],
         vec![5.625, 6.25, 8.125, 11.25, 15.625],
@@ -48,7 +48,7 @@ fn colorscale_for_contour_plot(_plot: &mut Plot) {
     _plot.add_trace(trace);
 }
 
-fn customizing_size_and_range_of_a_contour_plots_contours(_plot: &mut Plot) {
+pub fn customizing_size_and_range_of_a_contour_plots_contours(_plot: &mut Plot) {
     let z = vec![
         vec![10.0, 10.625, 12.5, 15.625, 20.0],
         vec![5.625, 6.25, 8.125, 11.25, 15.625],
@@ -66,7 +66,7 @@ fn customizing_size_and_range_of_a_contour_plots_contours(_plot: &mut Plot) {
     _plot.add_trace(trace);
 }
 
-fn customizing_spacing_between_x_and_y_ticks(_plot: &mut Plot) {
+pub fn customizing_spacing_between_x_and_y_ticks(_plot: &mut Plot) {
     let z = vec![
         vec![10.0, 10.625, 12.5, 15.625, 20.0],
         vec![5.625, 6.25, 8.125, 11.25, 15.625],
@@ -87,7 +87,7 @@ fn customizing_spacing_between_x_and_y_ticks(_plot: &mut Plot) {
 }
 
 // Heatmaps
-fn basic_heat_map(_plot: &mut Plot) {
+pub fn basic_heat_map(_plot: &mut Plot) {
     let z = vec![vec![1, 20, 30], vec![20, 1, 60], vec![30, 60, 1]];
     let trace = HeatMap::new_z(z);
     _plot.add_trace(trace);

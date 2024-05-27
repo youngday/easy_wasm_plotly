@@ -5,7 +5,7 @@ use plotly::layout::{Axis, GridPattern, Layout, LayoutGrid, Legend, RowOrder, Tr
 use plotly::{color::Rgb, Plot, Scatter};
 
 // Subplots
-fn simple_subplot(_plot: &mut Plot) {
+pub fn simple_subplot(_plot: &mut Plot) {
     let trace1 = Scatter::new(vec![1, 2, 3], vec![4, 5, 6]).name("trace1");
     let trace2 = Scatter::new(vec![20, 30, 40], vec![50, 60, 70])
         .name("trace2")
@@ -24,7 +24,7 @@ fn simple_subplot(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn custom_sized_subplot(_plot: &mut Plot) {
+pub fn custom_sized_subplot(_plot: &mut Plot) {
     let trace1 = Scatter::new(vec![1, 2, 3], vec![4, 5, 6]).name("trace1");
     let trace2 = Scatter::new(vec![20, 30, 40], vec![50, 60, 70])
         .name("trace2")
@@ -41,7 +41,7 @@ fn custom_sized_subplot(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn multiple_subplots(_plot: &mut Plot) {
+pub fn multiple_subplots(_plot: &mut Plot) {
     let trace1 = Scatter::new(vec![1, 2, 3], vec![4, 5, 6]).name("trace1");
     let trace2 = Scatter::new(vec![20, 30, 40], vec![50, 60, 70])
         .name("trace2")
@@ -68,7 +68,7 @@ fn multiple_subplots(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn stacked_subplots(_plot: &mut Plot) {
+pub fn stacked_subplots(_plot: &mut Plot) {
     let trace1 = Scatter::new(vec![0, 1, 2], vec![10, 11, 12]).name("trace1");
     let trace2 = Scatter::new(vec![2, 3, 4], vec![100, 110, 120])
         .name("trace2")
@@ -92,7 +92,7 @@ fn stacked_subplots(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn stacked_subplots_with_shared_x_axis(_plot: &mut Plot) {
+pub fn stacked_subplots_with_shared_x_axis(_plot: &mut Plot) {
     let trace1 = Scatter::new(vec![0, 1, 2], vec![10, 11, 12]).name("trace1");
     let trace2 = Scatter::new(vec![2, 3, 4], vec![100, 110, 120])
         .name("trace2")
@@ -111,7 +111,7 @@ fn stacked_subplots_with_shared_x_axis(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn multiple_custom_sized_subplots(_plot: &mut Plot) {
+pub fn multiple_custom_sized_subplots(_plot: &mut Plot) {
     let trace1 = Scatter::new(vec![1, 2], vec![1, 2]).name("(1,1)");
     let trace2 = Scatter::new(vec![1, 2], vec![1, 2])
         .name("(1,2,1)")
@@ -144,7 +144,7 @@ fn multiple_custom_sized_subplots(_plot: &mut Plot) {
 }
 
 // Multiple Axes
-fn two_y_axes(_plot: &mut Plot) {
+pub fn two_y_axes(_plot: &mut Plot) {
     let trace1 = Scatter::new(vec![1, 2, 3], vec![40, 50, 60]).name("trace1");
     let trace2 = Scatter::new(vec![2, 3, 4], vec![4, 5, 6])
         .name("trace2")
@@ -166,7 +166,7 @@ fn two_y_axes(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn multiple_axes(_plot: &mut Plot) {
+pub fn multiple_axes(_plot: &mut Plot) {
     let trace1 = Scatter::new(vec![1, 2, 3], vec![4, 5, 6]).name("trace1");
     let trace2 = Scatter::new(vec![2, 3, 4], vec![40, 50, 60])
         .name("trace2")

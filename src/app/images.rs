@@ -37,14 +37,19 @@ pub fn basic_image(_plot: &mut Plot) {
 }
 
 pub fn trace_from_image_crate_rgb(_plot: &mut Plot) {
-    let im = image::open("assets/mario.png").unwrap().into_rgb8();
-    let trace = Image::new(im).color_model(ColorModel::RGB);
+    let im = image::open("dist/mario.png").unwrap().into_rgba8();
+    let trace = Image::new(im).color_model(ColorModel::RGBA);
+
+    // let im = image::open("./mario.png").unwrap().into_rgb8();
+    // let trace = Image::new(im).color_model(ColorModel::RGB);
 
     _plot.add_trace(trace);
 }
 
 pub fn trace_from_image_crate_rgba(_plot: &mut Plot) {
-    let im = image::open("assets/mario.png").unwrap().into_rgba8();
+    let im = image::open("src/app/assets/mario.png")
+        .unwrap()
+        .into_rgba8();
     let trace = Image::new(im).color_model(ColorModel::RGBA);
 
     _plot.add_trace(trace);

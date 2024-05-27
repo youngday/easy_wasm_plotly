@@ -12,7 +12,7 @@ use plotly::{
 use rand::thread_rng;
 use rand_distr::{num_traits::Float, Distribution, Normal};
 
-fn filled_area_chart(_plot: &mut Plot) {
+pub fn filled_area_chart(_plot: &mut Plot) {
     let trace1 = Scatter::new(vec![0, 1, 2, 0], vec![0, 2, 0, 0]).fill(Fill::ToSelf);
     let trace2 =
         Scatter::new(vec![3, 3, 5, 5, 3], vec![0.5, 1.5, 1.5, 0.5, 0.5]).fill(Fill::ToSelf);
@@ -21,7 +21,7 @@ fn filled_area_chart(_plot: &mut Plot) {
     println!("{}", _plot.to_json());
 }
 
-fn vertical_and_horizontal_lines_positioned_relative_to_axes(_plot: &mut Plot) {
+pub fn vertical_and_horizontal_lines_positioned_relative_to_axes(_plot: &mut Plot) {
     let trace = Scatter::new(vec![2.0, 3.5, 6.0], vec![1.0, 1.5, 1.0])
         .text_array(vec![
             "Vertical Line",
@@ -78,7 +78,7 @@ fn vertical_and_horizontal_lines_positioned_relative_to_axes(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn lines_positioned_relative_to_the_plot_and_to_the_axes(_plot: &mut Plot) {
+pub fn lines_positioned_relative_to_the_plot_and_to_the_axes(_plot: &mut Plot) {
     let trace = Scatter::new(vec![2.0, 6.0], vec![1.0, 1.0])
         .text_array(vec![
             "Line positioned relative to the _plot",
@@ -117,7 +117,7 @@ fn lines_positioned_relative_to_the_plot_and_to_the_axes(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn creating_tangent_lines_with_shapes(_plot: &mut Plot) {
+pub fn creating_tangent_lines_with_shapes(_plot: &mut Plot) {
     let x0 = Array::linspace(1.0, 3.0, 200).into_raw_vec();
     let y0 = x0.iter().map(|v| *v * (v.powf(2.)).sin() + 1.).collect();
 
@@ -169,7 +169,7 @@ fn creating_tangent_lines_with_shapes(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn rectangles_positioned_relative_to_the_axes(_plot: &mut Plot) {
+pub fn rectangles_positioned_relative_to_the_axes(_plot: &mut Plot) {
     let trace = Scatter::new(vec![1.5, 4.5], vec![0.75, 0.75])
         .text_array(vec!["Unfilled Rectangle", "Filled Rectangle"])
         .mode(Mode::Text);
@@ -207,7 +207,7 @@ fn rectangles_positioned_relative_to_the_axes(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn rectangle_positioned_relative_to_the_plot_and_to_the_axes(_plot: &mut Plot) {
+pub fn rectangle_positioned_relative_to_the_plot_and_to_the_axes(_plot: &mut Plot) {
     let trace = Scatter::new(vec![1.5, 3.], vec![2.5, 2.5])
         .text_array(vec![
             "Rectangle reference to the _plot",
@@ -249,7 +249,7 @@ fn rectangle_positioned_relative_to_the_plot_and_to_the_axes(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn highlighting_time_series_regions_with_rectangle_shapes(_plot: &mut Plot) {
+pub fn highlighting_time_series_regions_with_rectangle_shapes(_plot: &mut Plot) {
     let x = vec![
         "2015-02-01",
         "2015-02-02",
@@ -323,7 +323,7 @@ fn highlighting_time_series_regions_with_rectangle_shapes(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn circles_positioned_relative_to_the_axes(_plot: &mut Plot) {
+pub fn circles_positioned_relative_to_the_axes(_plot: &mut Plot) {
     let trace = Scatter::new(vec![1.5, 3.5], vec![0.75, 2.5])
         .text_array(vec!["Unfilled Circle", "Filled Circle"])
         .mode(Mode::Text);
@@ -363,7 +363,7 @@ fn circles_positioned_relative_to_the_axes(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn highlighting_clusters_of_scatter_points_with_circle_shapes(_plot: &mut Plot) {
+pub fn highlighting_clusters_of_scatter_points_with_circle_shapes(_plot: &mut Plot) {
     let mut rng = thread_rng();
     let x0 = Normal::new(2., 0.45)
         .unwrap()
@@ -472,7 +472,7 @@ fn highlighting_clusters_of_scatter_points_with_circle_shapes(_plot: &mut Plot) 
     _plot.set_layout(layout);
 }
 
-fn venn_diagram_with_circle_shapes(_plot: &mut Plot) {
+pub fn venn_diagram_with_circle_shapes(_plot: &mut Plot) {
     _plot.add_trace(
         Scatter::new(vec![1., 1.75, 2.5], vec![1., 1., 1.])
             .text_array(vec!["$A$", "$A+B$", "$B$"])
@@ -535,7 +535,7 @@ fn venn_diagram_with_circle_shapes(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn adding_shapes_to_subplots(_plot: &mut Plot) {
+pub fn adding_shapes_to_subplots(_plot: &mut Plot) {
     _plot.add_trace(
         Scatter::new(vec![2, 6], vec![1, 1])
             .x_axis("x1")
@@ -618,7 +618,7 @@ fn adding_shapes_to_subplots(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn svg_paths(_plot: &mut Plot) {
+pub fn svg_paths(_plot: &mut Plot) {
     _plot.add_trace(
         Scatter::new(vec![2, 1, 8, 8], vec![0.25, 9., 2., 6.])
             .text_array(vec![

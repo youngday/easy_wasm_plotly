@@ -12,7 +12,7 @@ use plotly::{
 use rand_distr::{Distribution, Normal, Uniform};
 
 // Error Bars
-fn basic_symmetric_error_bars(_plot: &mut Plot) {
+pub fn basic_symmetric_error_bars(_plot: &mut Plot) {
     let trace1 = Scatter::new(vec![0, 1, 2], vec![6, 10, 2])
         .name("trace1")
         .error_y(ErrorData::new(ErrorType::Data).array(vec![1.0, 2.0, 3.0]));
@@ -20,7 +20,7 @@ fn basic_symmetric_error_bars(_plot: &mut Plot) {
     _plot.add_trace(trace1);
 }
 
-fn asymmetric_error_bars(_plot: &mut Plot) {
+pub fn asymmetric_error_bars(_plot: &mut Plot) {
     let trace1 = Scatter::new(vec![1, 2, 3, 4], vec![2, 1, 3, 4])
         .name("trace1")
         .error_y(
@@ -32,7 +32,7 @@ fn asymmetric_error_bars(_plot: &mut Plot) {
     _plot.add_trace(trace1);
 }
 
-fn error_bars_as_a_percentage_of_the_y_value(_plot: &mut Plot) {
+pub fn error_bars_as_a_percentage_of_the_y_value(_plot: &mut Plot) {
     let trace1 = Scatter::new(vec![0, 1, 2], vec![6, 10, 2])
         .name("trace1")
         .error_y(ErrorData::new(ErrorType::Percent).value(50.).visible(true));
@@ -40,7 +40,7 @@ fn error_bars_as_a_percentage_of_the_y_value(_plot: &mut Plot) {
     _plot.add_trace(trace1);
 }
 
-fn asymmetric_error_bars_with_a_constant_offset(_plot: &mut Plot) {
+pub fn asymmetric_error_bars_with_a_constant_offset(_plot: &mut Plot) {
     let trace1 = Scatter::new(vec![1, 2, 3, 4], vec![2, 1, 3, 4])
         .name("trace1")
         .error_y(
@@ -53,7 +53,7 @@ fn asymmetric_error_bars_with_a_constant_offset(_plot: &mut Plot) {
     _plot.add_trace(trace1);
 }
 
-fn horizontal_error_bars(_plot: &mut Plot) {
+pub fn horizontal_error_bars(_plot: &mut Plot) {
     let trace1 = Scatter::new(vec![1, 2, 3, 4], vec![2, 1, 3, 4])
         .name("trace1")
         .error_x(ErrorData::new(ErrorType::Percent).value(10.));
@@ -61,7 +61,7 @@ fn horizontal_error_bars(_plot: &mut Plot) {
     _plot.add_trace(trace1);
 }
 
-fn bar_chart_with_error_bars(_plot: &mut Plot) {
+pub fn bar_chart_with_error_bars(_plot: &mut Plot) {
     let trace_c = Bar::new(vec!["Trial 1", "Trial 2", "Trial 3"], vec![3, 6, 4])
         .error_y(ErrorData::new(ErrorType::Data).array(vec![1., 0.5, 1.5]));
     let trace_e = Bar::new(vec!["Trial 1", "Trial 2", "Trial 3"], vec![4, 7, 3])
@@ -73,7 +73,7 @@ fn bar_chart_with_error_bars(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn colored_and_styled_error_bars(_plot: &mut Plot) {
+pub fn colored_and_styled_error_bars(_plot: &mut Plot) {
     let x_theo: Vec<f64> = Array::linspace(-4., 4., 100).into_raw_vec();
     let sincx: Vec<f64> = x_theo
         .iter()
@@ -111,7 +111,7 @@ fn colored_and_styled_error_bars(_plot: &mut Plot) {
 }
 
 // Box Plots
-fn basic_box_plot(_plot: &mut Plot) {
+pub fn basic_box_plot(_plot: &mut Plot) {
     let mut rng = rand::thread_rng();
     let uniform1 = Uniform::new(0.0, 1.0);
     let uniform2 = Uniform::new(1.0, 2.0);
@@ -131,7 +131,7 @@ fn basic_box_plot(_plot: &mut Plot) {
     _plot.add_trace(trace2);
 }
 
-fn box_plot_that_displays_the_underlying_data(_plot: &mut Plot) {
+pub fn box_plot_that_displays_the_underlying_data(_plot: &mut Plot) {
     let trace1 = BoxPlot::new(vec![0, 1, 1, 2, 3, 5, 8, 13, 21])
         .box_points(BoxPoints::All)
         .jitter(0.3)
@@ -139,7 +139,7 @@ fn box_plot_that_displays_the_underlying_data(_plot: &mut Plot) {
     _plot.add_trace(trace1);
 }
 
-fn horizontal_box_plot(_plot: &mut Plot) {
+pub fn horizontal_box_plot(_plot: &mut Plot) {
     let trace1 = BoxPlot::new(vec![1, 2, 3, 4, 4, 4, 8, 9, 10]).name("Set 1");
     let trace2 = BoxPlot::new(vec![2, 3, 3, 3, 3, 5, 6, 6, 7]).name("Set 2");
 
@@ -147,7 +147,7 @@ fn horizontal_box_plot(_plot: &mut Plot) {
     _plot.add_trace(trace2);
 }
 
-fn grouped_box_plot(_plot: &mut Plot) {
+pub fn grouped_box_plot(_plot: &mut Plot) {
     let x = vec![
         "day 1", "day 1", "day 1", "day 1", "day 1", "day 1", "day 2", "day 2", "day 2", "day 2",
         "day 2", "day 2",
@@ -180,7 +180,7 @@ fn grouped_box_plot(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn box_plot_styling_outliers(_plot: &mut Plot) {
+pub fn box_plot_styling_outliers(_plot: &mut Plot) {
     let y = vec![
         0.75, 5.25, 5.5, 6.0, 6.2, 6.6, 6.80, 7.0, 7.2, 7.5, 7.5, 7.75, 8.15, 8.15, 8.65, 8.93,
         9.2, 9.5, 10.0, 10.25, 11.5, 12.0, 16.0, 20.90, 22.3, 23.25,
@@ -222,7 +222,7 @@ fn box_plot_styling_outliers(_plot: &mut Plot) {
     _plot.add_trace(trace4);
 }
 
-fn box_plot_styling_mean_and_standard_deviation(_plot: &mut Plot) {
+pub fn box_plot_styling_mean_and_standard_deviation(_plot: &mut Plot) {
     let y = vec![
         2.37, 2.16, 4.82, 1.73, 1.04, 0.23, 1.32, 2.91, 0.11, 4.51, 0.51, 3.75, 1.35, 2.98, 4.50,
         0.18, 4.66, 1.30, 2.06, 1.19,
@@ -243,7 +243,7 @@ fn box_plot_styling_mean_and_standard_deviation(_plot: &mut Plot) {
     _plot.add_trace(trace2);
 }
 
-fn grouped_horizontal_box_plot(_plot: &mut Plot) {
+pub fn grouped_horizontal_box_plot(_plot: &mut Plot) {
     let x = vec![
         "day 1", "day 1", "day 1", "day 1", "day 1", "day 1", "day 2", "day 2", "day 2", "day 2",
         "day 2", "day 2",
@@ -290,7 +290,7 @@ fn grouped_horizontal_box_plot(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn fully_styled_box_plot(_plot: &mut Plot) {
+pub fn fully_styled_box_plot(_plot: &mut Plot) {
     let rnd_sample = |num, mul| -> Vec<f64> {
         let mut v: Vec<f64> = Vec::with_capacity(num);
         let mut rng = rand::thread_rng();
@@ -357,7 +357,7 @@ fn fully_styled_box_plot(_plot: &mut Plot) {
 }
 
 // Histograms
-fn sample_normal_distribution(n: usize, mean: f64, std_dev: f64) -> Vec<f64> {
+pub fn sample_normal_distribution(n: usize, mean: f64, std_dev: f64) -> Vec<f64> {
     let mut rng = rand::thread_rng();
     let dist = Normal::new(mean, std_dev).unwrap();
     let mut v = Vec::<f64>::with_capacity(n);
@@ -367,7 +367,7 @@ fn sample_normal_distribution(n: usize, mean: f64, std_dev: f64) -> Vec<f64> {
     v
 }
 
-fn sample_uniform_distribution(n: usize, lb: f64, ub: f64) -> Vec<f64> {
+pub fn sample_uniform_distribution(n: usize, lb: f64, ub: f64) -> Vec<f64> {
     let mut rng = rand::thread_rng();
     let dist = Uniform::new(lb, ub);
     let mut v = Vec::<f64>::with_capacity(n);
@@ -377,13 +377,13 @@ fn sample_uniform_distribution(n: usize, lb: f64, ub: f64) -> Vec<f64> {
     v
 }
 
-fn basic_histogram(_plot: &mut Plot) {
+pub fn basic_histogram(_plot: &mut Plot) {
     let samples = sample_normal_distribution(10_000, 0.0, 1.0);
     let trace = Histogram::new(samples).name("h");
     _plot.add_trace(trace);
 }
 
-fn horizontal_histogram(_plot: &mut Plot) {
+pub fn horizontal_histogram(_plot: &mut Plot) {
     let samples = sample_normal_distribution(10_000, 0.0, 1.0);
     let trace = Histogram::new_vertical(samples)
         .name("h")
@@ -392,7 +392,7 @@ fn horizontal_histogram(_plot: &mut Plot) {
     _plot.add_trace(trace);
 }
 
-fn overlaid_histogram(_plot: &mut Plot) {
+pub fn overlaid_histogram(_plot: &mut Plot) {
     let samples1 = sample_normal_distribution(500, 0.0, 1.0);
     let trace1 = Histogram::new(samples1)
         .name("trace 1")
@@ -412,7 +412,7 @@ fn overlaid_histogram(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn stacked_histograms(_plot: &mut Plot) {
+pub fn stacked_histograms(_plot: &mut Plot) {
     let samples1 = sample_normal_distribution(500, 0.0, 1.0);
     let trace1 = Histogram::new(samples1)
         .name("trace 1")
@@ -432,7 +432,7 @@ fn stacked_histograms(_plot: &mut Plot) {
     _plot.set_layout(layout);
 }
 
-fn colored_and_styled_histograms(_plot: &mut Plot) {
+pub fn colored_and_styled_histograms(_plot: &mut Plot) {
     let n = 500;
     let x1 = sample_uniform_distribution(n, 0.0, 5.0);
     let x2 = sample_uniform_distribution(n, 0.0, 10.0);
@@ -473,7 +473,7 @@ fn colored_and_styled_histograms(_plot: &mut Plot) {
     _plot.add_trace(trace2);
 }
 
-fn cumulative_histogram(_plot: &mut Plot) {
+pub fn cumulative_histogram(_plot: &mut Plot) {
     let n = 500;
     let x = sample_uniform_distribution(n, 0.0, 1.0);
     let trace = Histogram::new(x)
@@ -482,7 +482,7 @@ fn cumulative_histogram(_plot: &mut Plot) {
     _plot.add_trace(trace);
 }
 
-fn normalized_histogram(_plot: &mut Plot) {
+pub fn normalized_histogram(_plot: &mut Plot) {
     let n = 500;
     let x = sample_uniform_distribution(n, 0.0, 1.0);
     let trace = Histogram::new(x)
@@ -491,7 +491,7 @@ fn normalized_histogram(_plot: &mut Plot) {
     _plot.add_trace(trace);
 }
 
-fn specify_binning_function(_plot: &mut Plot) {
+pub fn specify_binning_function(_plot: &mut Plot) {
     let x = vec!["Apples", "Apples", "Apples", "Oranges", "Bananas"];
     let y = vec!["5", "10", "3", "10", "5"];
 
