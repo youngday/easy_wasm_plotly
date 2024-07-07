@@ -27,8 +27,7 @@ pub fn plot_component() -> Html {
             let trace = Scatter::new(vec![0, 1, 2], vec![2, 1, 0]);
             _plot.add_trace(trace);
 
-            let layout = plotly::Layout::new()
-                .title(plotly::common::Title::new("Displaying a Chart in Yew"));
+            let layout = plotly::Layout::new().title(plotly::common::Title::new());
             _plot.set_layout(layout);
             //plot demo -------------------------
         };

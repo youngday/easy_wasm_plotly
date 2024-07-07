@@ -49,7 +49,7 @@ pub fn time_series_plot_with_custom_date_range(_plot: &mut Plot) {
 
     let layout = Layout::new()
         .x_axis(Axis::new().range(vec!["2016-07-01", "2016-12-31"]))
-        .title(Title::new("Manually Set Date Range"));
+        .title(Title::new());
     _plot.set_layout(layout);
 }
 
@@ -63,7 +63,7 @@ pub fn time_series_with_range_slider(_plot: &mut Plot) {
 
     let layout = Layout::new()
         .x_axis(Axis::new().range_slider(RangeSlider::new().visible(true)))
-        .title(Title::new("Manually Set Date Range"));
+        .title(Title::new());
     _plot.set_layout(layout);
 }
 

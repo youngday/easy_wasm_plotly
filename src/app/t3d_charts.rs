@@ -41,10 +41,10 @@ pub fn simple_scatter3d_plot(_plot: &mut Plot) {
     _plot.add_trace(trace2); //Diamond
 
     let layout = Layout::new()
-        .title("Helix".into())
-        .x_axis(Axis::new().title("x (A meaningful axis name goes here)".into()))
-        .y_axis(Axis::new().title(Title::new("This is the label of the Y axis")))
-        .z_axis(Axis::new().title("z Axis".into()));
+        .title("Helix")
+        .x_axis(Axis::new().title("x (A meaningful axis name goes here)"))
+        .y_axis(Axis::new().title(Title::new()))
+        .z_axis(Axis::new().title("z Axis"));
     _plot.set_layout(layout);
 }
 

@@ -60,11 +60,11 @@ pub fn line_and_scatter_plots(_plot: &mut Plot) {
     _plot.add_trace(trace3);
 
     let layout = Layout::new()
-        .title("Data Labels Hover".into()) //data_labels_hover
+        .title("Data Labels Hover") //data_labels_hover
         .width(1280)
         .height(600)
-        .x_axis(Axis::new().title("x".into()).range(vec![-0.1, 1.1]))
-        .y_axis(Axis::new().title("y".into()).range(vec![-8.0, 8.]));
+        .x_axis(Axis::new().title("x").range(vec![-0.1, 1.1]))
+        .y_axis(Axis::new().title("y").range(vec![-8.0, 8.]));
     _plot.set_layout(layout);
 }
 
@@ -313,7 +313,7 @@ pub fn basic_sankey_diagram(_plot: &mut Plot) {
         );
 
     let layout = Layout::new()
-        .title("Basic Sankey".into())
+        .title("Basic Sankey")
         .font(Font::new().size(10));
 
     _plot.add_trace(trace);

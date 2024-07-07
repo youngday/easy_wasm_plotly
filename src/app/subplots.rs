@@ -131,7 +131,7 @@ pub fn multiple_custom_sized_subplots(_plot: &mut Plot) {
     _plot.add_trace(trace4);
 
     let layout = Layout::new()
-        .title(Title::new("Multiple Custom Sized Subplots"))
+        .title(Title::new())
         .x_axis(Axis::new().domain(&[0., 0.45]).anchor("y1"))
         .y_axis(Axis::new().domain(&[0.5, 1.]).anchor("x1"))
         .x_axis2(Axis::new().domain(&[0.55, 1.]).anchor("y2"))
@@ -154,11 +154,11 @@ pub fn two_y_axes(_plot: &mut Plot) {
     _plot.add_trace(trace2);
 
     let layout = Layout::new()
-        .title(Title::new("Double Y Axis Example"))
-        .y_axis(Axis::new().title(Title::new("yaxis title")))
+        .title(Title::new())
+        .y_axis(Axis::new().title(Title::new()))
         .y_axis2(
             Axis::new()
-                .title(Title::new("yaxis2 title").font(Font::new().color(Rgb::new(148, 103, 189))))
+                .title(Title::new().font(Font::new().color(Rgb::new(148, 103, 189))))
                 .tick_font(Font::new().color(Rgb::new(148, 103, 189)))
                 .overlaying("y")
                 .side(AxisSide::Right),
@@ -180,17 +180,17 @@ pub fn multiple_axes(_plot: &mut Plot) {
     _plot.add_trace(trace4);
 
     let layout = Layout::new()
-        .title(Title::new("multiple y-axes example"))
+        .title(Title::new())
         .width(800)
         .x_axis(Axis::new().domain(&[0.3, 0.7]))
         .y_axis(
             Axis::new()
-                .title(Title::new("yaxis title").font(Font::new().color("#1f77b4")))
+                .title(Title::new().font(Font::new().color("#1f77b4")))
                 .tick_font(Font::new().color("#1f77b4")),
         )
         .y_axis2(
             Axis::new()
-                .title(Title::new("yaxis2 title").font(Font::new().color("#ff7f0e")))
+                .title(Title::new().font(Font::new().color("#ff7f0e")))
                 .tick_font(Font::new().color("#ff7f0e"))
                 .anchor("free")
                 .overlaying("y")
@@ -199,7 +199,7 @@ pub fn multiple_axes(_plot: &mut Plot) {
         )
         .y_axis3(
             Axis::new()
-                .title(Title::new("yaxis3 title").font(Font::new().color("#d62728")))
+                .title(Title::new().font(Font::new().color("#d62728")))
                 .tick_font(Font::new().color("#d62728"))
                 .anchor("x")
                 .overlaying("y")
@@ -207,7 +207,7 @@ pub fn multiple_axes(_plot: &mut Plot) {
         )
         .y_axis4(
             Axis::new()
-                .title(Title::new("yaxis4 title").font(Font::new().color("#9467bd")))
+                .title(Title::new().font(Font::new().color("#9467bd")))
                 .tick_font(Font::new().color("#9467bd"))
                 .anchor("free")
                 .overlaying("y")

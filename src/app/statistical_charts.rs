@@ -170,11 +170,7 @@ pub fn grouped_box_plot(_plot: &mut Plot) {
     _plot.add_trace(trace3);
 
     let layout = Layout::new()
-        .y_axis(
-            Axis::new()
-                .title(Title::new("normalized moisture"))
-                .zero_line(false),
-        )
+        .y_axis(Axis::new().title(Title::new()).zero_line(false))
         .box_mode(BoxMode::Group);
 
     _plot.set_layout(layout);
@@ -213,7 +209,7 @@ pub fn box_plot_styling_outliers(_plot: &mut Plot) {
         .marker(Marker::new().color(Rgb::new(107, 174, 214)))
         .box_points(BoxPoints::Outliers);
 
-    let layout = Layout::new().title(Title::new("Box Plot Styling Outliers"));
+    let layout = Layout::new().title(Title::new());
 
     _plot.set_layout(layout);
     _plot.add_trace(trace1);
@@ -236,7 +232,7 @@ pub fn box_plot_styling_mean_and_standard_deviation(_plot: &mut Plot) {
         .name("Mean and Standard Deviation")
         .marker(Marker::new().color(Rgb::new(8, 81, 156)))
         .box_mean(BoxMean::StandardDeviation);
-    let layout = Layout::new().title(Title::new("Box Plot Styling Mean and Standard Deviation"));
+    let layout = Layout::new().title(Title::new());
 
     _plot.set_layout(layout);
     _plot.add_trace(trace1);
@@ -279,12 +275,8 @@ pub fn grouped_horizontal_box_plot(_plot: &mut Plot) {
     _plot.add_trace(trace3);
 
     let layout = Layout::new()
-        .title(Title::new("Grouped Horizontal Box Plot"))
-        .x_axis(
-            Axis::new()
-                .title(Title::new("normalized moisture"))
-                .zero_line(false),
-        )
+        .title(Title::new())
+        .x_axis(Axis::new().title(Title::new()).zero_line(false))
         .box_mode(BoxMode::Group);
 
     _plot.set_layout(layout);
@@ -324,9 +316,7 @@ pub fn fully_styled_box_plot(_plot: &mut Plot) {
         rnd_sample(30, 43.0),
     ];
     let layout = Layout::new()
-        .title(Title::new(
-            "Points Scored by the Top 9 Scoring NBA Players in 2012",
-        ))
+        .title(Title::new())
         .y_axis(
             Axis::new()
                 .auto_range(true)
@@ -462,9 +452,9 @@ pub fn colored_and_styled_histograms(_plot: &mut Plot) {
         .auto_bin_x(false)
         .x_bins(Bins::new(-3.2, 4.0, 0.06));
     let layout = Layout::new()
-        .title(Title::new("Colored and Styled Histograms"))
-        .x_axis(Axis::new().title(Title::new("Value")))
-        .y_axis(Axis::new().title(Title::new("Count")))
+        .title(Title::new())
+        .x_axis(Axis::new().title(Title::new()))
+        .y_axis(Axis::new().title(Title::new()))
         .bar_mode(BarMode::Overlay)
         .bar_gap(0.05)
         .bar_group_gap(0.2);
