@@ -1,5 +1,5 @@
 # wasm plot example from plotly
-
+## please check https://github.com/youngday/wasm_plot ,replace yew by leptos ,full stack.
 ## lib
 
 get plotly.rs lib from
